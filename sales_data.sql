@@ -1,3 +1,5 @@
+
+
 -- What is the revenue for ClosedWon opp for each Lead Source
 -- 1. Get LeadSource and SUM(ExpectedRevenue) from _Opportunity
 -- 2. WHERE StageName = 'Closed Won'
@@ -9,6 +11,8 @@ SELECT
 FROM "Opportunity" 
 WHERE StageName = 'Closed Won' 
 GROUP BY LeadSource
+
+
 
 -- 1. Get the Name and sum of Amount from Opportunity
 -- 2. Where the StageName is 'Closed Won'
@@ -23,6 +27,8 @@ FROM
     "Opportunity"
 WHERE StageName = 'Closed Won' GROUP BY Name ORDER BY Total_Amount DESC LIMIT 20
 
+
+
 -- 1. Get the FiscalYear and SUM(Amount) from Opportunity
 -- 2. Where the StageName is 'Closed Won'
 -- 3. Group by FiscalYear
@@ -34,6 +40,7 @@ FROM
     "Opportunity"
 WHERE StageName = 'Closed Won'
 GROUP BY FiscalYear
+
 
 
 -- 1. Get the fiscalquarter, fiscalyear, and sum of amount from Opportunity
@@ -48,3 +55,7 @@ SELECT
 FROM
     "Opportunity"
 GROUP BY fiscalquarter, fiscalyear HAVING fiscalyear IN (2021,2022);
+
+
+
+
